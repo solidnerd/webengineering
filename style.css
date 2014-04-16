@@ -2,17 +2,24 @@
 	background: black;
 }
 
-.h1_background_color_yellow {
-	background-color: yellow;
+.fontColor {
+	color: yellow;
 }
 
-.font {
-	color: yellow;
+.fontHeader {
+	font-size: 3em; /* 1em = 12pt */
+}
+
+.fontArticle {
+	font-size: 1em;
+}
+
+.fontFooter {
+	font-size : 0.75em;
 }
 
 /*Skaliert das Bild auf 200x200px*/
 .img { 
-	float:right;
 	height: 200px;
 	width: 200px;
 }
@@ -21,4 +28,8 @@
 .thumbnail {
 	height: 50px;
 	width: 50px;
+}
+
+.input {
+	width = 40px;
 }
