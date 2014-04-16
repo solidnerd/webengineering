@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Fragen ?</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+	<header class="fontColor fontHeader">Formular</header> 
+	<form action="fragen" method="post">
+		<fieldset>
+			<legend class="fontColor"> Benötigte Angaben </legend>
+			<p class="fontColor">Bitte geben Sie ihren Vor- und Nachnamen ein</p>
+			<input class="input" type="text" name="Vorname" required="required" autofocus="autofocus" placeholder="Vorname Nachname" maxlength="30" pattern="[A-Z]{1}[a-z]+[A-Z]{1}[a-z]+"/>
+
+			<p class="fontColor">Bitte geben Sie ihren Wohnort an</p>
+			<input class="input" type="text" name="Wohnort" required="required" placeholder="Wohnort" maxlength="30" pattern=""/>
+
+			<p class="fontColor">Bitte geben Sie ihre Email Adresse an</p>
+			<input class="input" type="email" name="EMail" required="required" placeholder="Email"/>
+
+			<p class="fontColor"> Ihre Nachricht </p>
+			<textarea row="4"cols="50">Ihre Nachricht</textarea>
+
+		</fieldset>
+
+		<fieldset >
+			<legend class="fontColor"> Optionale Angaben </legend>
+			<p class="fontColor"> Bitte Geben Sie ihre Telefonnummer an </p>
+			<input class="input" type="tel" pattern="[0-9]/[0-9]"/>	
+		</fieldset>
+
+		<input type="submit" value="Absenden"/>
+	</form>
+</body>
+</html>
