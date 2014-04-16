@@ -1,0 +1,24 @@
+.body {
+	background: black;
+}
+
+.h1_background_color_yellow {
+	background-color: yellow;
+}
+
+.font {
+	color: yellow;
+}
+
+/*Skaliert das Bild auf 200x200px*/
+.img { 
+	float:right;
+	height: 200px;
+	width: 200px;
+}
+
+/* Skaliert das Bild auf 50x50px */
+.thumbnail {
+	height: 50px;
+	width: 50px;
+}
