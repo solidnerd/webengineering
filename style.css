@@ -8,6 +8,13 @@
 
 .fontHeader {
 	font-size: 3em; /* 1em = 12pt */
+	
+}
+
+.fontHeader:hover {
+	-webkit-transform:rotate(180deg); /*Für Sarfari und Chrome */
+	-moz-transform:rotate(180deg); /* Für FireFox*/
+	-o-transform:rotate(180deg);  /* Opera */
 }
 
 .fontArticle {
@@ -32,4 +39,21 @@
 
 .input {
 	width = 40px;
+}
+
+.Article{
+
+	border: 1px;
+	border-style:solid;
+	border-color: yellow;
+	border-radius: 10px; 
+
+	background: -webkit-linear-gradient( black , yellow); /* Chrome Sarfari*/
+	background: -o-linear-gradient( black, yellow); /* Opera */
+	background: -moz-linear-gradient(black, yellow); /* FireFoxe */
+}
+
+#absolute {
+	position: absolute;
+	right: 0;
 }
