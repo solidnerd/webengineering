@@ -3,33 +3,83 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Fragen ?</title>
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="jquery.powertip.css">
 </head>
-<body class="body">
-	<header class="fontColor fontHeader">Formular</header> 
-	<form action="fragen" method="post">
-		<fieldset>
-			<legend class="fontColor"> Benötigte Angaben </legend>
-			<p class="fontColor">Bitte geben Sie ihren Vor- und Nachnamen ein</p>
-			<input class="input" type="text" name="Vorname" required="required" autofocus="autofocus" placeholder="Vorname Nachname" maxlength="30" pattern="[A-Z]{1}[a-z]+[A-Z]{1}[a-z]+"/>
+<body>
+	<div class="container">
+		<header class="page-header">
+			Formular
+		</header>
+		<div class="row">
+		<form action="fragen" method="post" role="form" class="form-horizontal">
+				<div class="col-md-12">
+					<label class="help-block">Benötigte Angaben</label>
+				<div class="from-group">
+					<label for="inputName" class="col-md-2 control-label">Vor- und Nachnamen</label>
+    				<div class="col-md-10">
+      				<input type="text" class="form-control" id="inputName" placeholder="Vorname Nachname" required="required" autofocus="autofocus" maxlength="30" pattern="[A-Z]{1}[a-z]+[A-Z]{1}[a-z]+" title="Fügen Sie ihren Vor und Nachnamen hinzu">
+      				</div>
+    			</div>
 
-			<p class="fontColor">Bitte geben Sie ihren Wohnort an</p>
-			<input class="input" type="text" name="Wohnort" required="required" placeholder="Wohnort" maxlength="30" pattern=""/>
+    			<div class="from-group">
+					<label for="inputWohnort" class="col-md-2 control-label">Wohnort</label>    
+					<div class="col-md-10">			
+      					<input type="text" class="form-control" id="inputWohnort" required="required" placeholder="Wohnort" maxlength="30" pattern="" title="Fügen Sie ihren Wohnort hinzu">
+    				</div>
+    			</div>
 
-			<p class="fontColor">Bitte geben Sie ihre Email Adresse an</p>
-			<input class="input" type="email" name="EMail" required="required" placeholder="Email"/>
+    			<div class="from-group">
+					<label for="inputEmail" class="col-md-2 control-label">Email</label>
+					<div class="col-md-10">
+      					<input type="email" class="form-control" id="inputEmail" required="required" placeholder="Email" maxlength="30" pattern="" title="Fügen Sie ihre Email hinzu">
+      				</div>
+    			</div>
 
-			<p class="fontColor"> Ihre Nachricht </p>
-			<textarea row="4"cols="50">Ihre Nachricht</textarea>
 
-		</fieldset>
+    			<div class="from-group">
+					<label for="inputNachricht" class="col-md-2 control-label">Nachricht</label>
+					<div class="col-md-10">
+      					<textarea title="Max 160 Zeichen" class="form-control" rows="4" id="inputNachricht" required="required" placeholder="Nachricht" maxlength="160" ></textarea>
+      				</div>
+      				<div class="row">
+      					<div class="col-md-6"></div>
+      					<div class="col-md-6">
+      						<p class="help-block" id="textareacounter">Counter</p>
+      					</div>
+      				</div>
+    			</div>
 
-		<fieldset >
-			<legend class="fontColor"> Optionale Angaben </legend>
-			<p class="fontColor"> Bitte Geben Sie ihre Telefonnummer an </p>
-			<input class="input" type="tel" pattern="[0-9]/[0-9]"/>	
-		</fieldset>
+    			<label class="help-block">Optionale Angaben</label>
 
-		<input type="submit" value="Absenden"/>
-	</form>
+				<div class="form-group">
+					<label for="inputTelefon"  class="col-md-2 control-label">Telefonnummer</label>
+					<div class="col-md-10">
+						<input class="form-control" id="inputTelefon" type="tel" pattern="[0-9]/[0-9]" maxlength="30" title="Fügen Sie ihre Telefonnummer hinzu" />
+					</div>
+				</div>
+				
+				<button type="submit" class="btn btn-default">Absenden</button>
+				<button type="reset" id='reset' class="btn btn-default">Reset</button>	
+				
+			</div>
+		</form>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<footer>
+					<a href="uebersicht.html">Übersicht</a>
+				</footer>
+			</div>
+		</div>
+	</div>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="jquery-latest.js"></script>
+	<script src="jquery.powertip.js"></script>
+	<script src="tooltip.js"</script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </body>
 </html>
