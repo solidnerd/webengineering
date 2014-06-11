@@ -1,0 +1,11 @@
+
+<web-app>
+  <servlet>
+    <servlet-name>formular.do</servlet-name>
+    <servlet-class>controller.KontaktServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>formular.do</servlet-name>
+    <url-pattern>/formular.do</url-pattern>
+  </servlet-mapping>
+</web-app>
