@@ -14,27 +14,27 @@
 			Formular
 		</header>
 		<div class="row">
-		<form action="fragen" method="post" role="form" class="form-horizontal">
+		<form action="formular.do" method="post" role="form" class="form-horizontal">
 				<div class="col-md-12">
 					<label class="help-block">Benötigte Angaben</label>
 				<div class="from-group">
 					<label for="inputName" class="col-md-2 control-label">Vor- und Nachnamen</label>
     				<div class="col-md-10">
-      				<input type="text" class="form-control" id="inputName" placeholder="Vorname Nachname" required="required" autofocus="autofocus" maxlength="30" pattern="[A-Z]{1}[a-z]+[A-Z]{1}[a-z]+" title="Fügen Sie ihren Vor und Nachnamen hinzu">
+      				<input type="text" class="form-control" name="name"id="inputName" placeholder="Vorname Nachname" required="required" autofocus="autofocus" maxlength="30" pattern="[A-Z]{1}[a-z]+[A-Z]{1}[a-z]+" title="Fügen Sie ihren Vor und Nachnamen hinzu">
       				</div>
     			</div>
 
     			<div class="from-group">
 					<label for="inputWohnort" class="col-md-2 control-label">Wohnort</label>
 					<div class="col-md-10">
-      					<input type="text" class="form-control" id="inputWohnort" required="required" placeholder="Wohnort" maxlength="30" pattern="" title="Fügen Sie ihren Wohnort hinzu">
+      					<input type="text" class="form-control" name="wohnort"id="inputWohnort" required="required" placeholder="Wohnort" maxlength="30"  title="Fügen Sie ihren Wohnort hinzu">
     				</div>
     			</div>
 
     			<div class="from-group">
 					<label for="inputEmail" class="col-md-2 control-label">Email</label>
 					<div class="col-md-10">
-      					<input type="email" class="form-control" id="inputEmail" required="required" placeholder="Email" maxlength="30" pattern="" title="Fügen Sie ihre Email hinzu">
+      					<input type="email" class="form-control" name="email" id="inputEmail" required="required" placeholder="Email" maxlength="30"  title="Fügen Sie ihre Email hinzu">
       				</div>
     			</div>
 
@@ -42,7 +42,7 @@
     			<div class="from-group">
 					<label for="inputNachricht" class="col-md-2 control-label">Nachricht</label>
 					<div class="col-md-10">
-      					<textarea title="Max 160 Zeichen" class="form-control" rows="4" id="inputNachricht" required="required" placeholder="Nachricht" maxlength="160" ></textarea>
+      					<textarea title="Max 160 Zeichen" class="form-control" name="nachrricht"rows="4" id="inputNachricht" required="required" placeholder="Nachricht" maxlength="160" ></textarea>
       				</div>
       				<div class="row">
       					<div class="col-md-6"></div>
@@ -57,7 +57,7 @@
 				<div class="form-group">
 					<label for="inputTelefon"  class="col-md-2 control-label">Telefonnummer</label>
 					<div class="col-md-10">
-						<input class="form-control" id="inputTelefon" type="tel" pattern="[0-9]/[0-9]" maxlength="30" title="Fügen Sie ihre Telefonnummer hinzu" />
+						<input class="form-control" name="telefonnummer" id="inputTelefon" type="tel" pattern="[0-9]{4}/[0-9]{6}" maxlength="30" title="Fügen Sie ihre Telefonnummer hinzu" />
 					</div>
 				</div>
 
