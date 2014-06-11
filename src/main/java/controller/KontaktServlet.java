@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,26 +31,17 @@ public class KontaktServlet extends HttpServlet {
 		Kontakt contact = new Kontakt(requestVorname,requestNachname,requestWohnort,requestNachrricht,requestEmail , requestTelefonNummer);
 		
 		if(contact.isValid()){
+			request.setAttribute("kontakt", contact);
 			try {
-				contactDAO.Save(contact);
-				response.setContentType("text/html");
-				response.getWriter().write(String.format("<h1>Hallo %s!</h1>", requestVorname));
-				response.getWriter().write("<p>Vielen Danke für ihren kommentar.Die Daten wurden erfolgreich gespeichert</p>");
-				response.getWriter().write("<a href=\"fragen.html\">Zurück zur StartSeite</a>");
-				response.getWriter().close();
+				RequestDispatcher view  = request.getRequestDispatcher("formular_ok.jsp");
+				view.forward(request, response);
 			} catch (Exception e) {
-				response.setContentType("text/html");
-				response.getWriter().write("<h1>Fehler !</h1>");
-				response.getWriter().write("<p>Ein fehler ist aufgetreten.Beim Speichern der Daten"+e.getMessage());
-				response.getWriter().write("<a href=\"fragen.html\">Zurück zur StartSeite</a>");
-				response.getWriter().close();
+				RequestDispatcher view  = request.getRequestDispatcher("formular_error.jsp");
+				view.forward(request, response);
 			}			
 		}else{
-			response.setContentType("text/html");
-			response.getWriter().write("<h1>Fehler !</h1>");
-			response.getWriter().write("<p>Ein fehler ist aufgetreten mindestends ein Pflichtpfeld fehlt!(name,email,wohnort,nachrricht)</p>");
-			response.getWriter().write("<a href=\"fragen.html\">Zurück zur StartSeite</a>");
-			response.getWriter().close();
+			RequestDispatcher view  = request.getRequestDispatcher("formular_error.jsp");
+			view.forward(request, response);
 		}
 	}
 
