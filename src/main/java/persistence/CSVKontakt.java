@@ -9,17 +9,16 @@ public class CSVKontakt implements KontaktDAO {
 	
 	
 	public void Save(Kontakt contact) throws Exception {
-		try {
-			synchronized (contact) {
+		try{
 				FileWriter csvWriter = new FileWriter("kontakt.csv",true);
-				writeCSVItem(csvWriter, contact.getNachname());
+				writeCSVItem(csvWriter, contact.getName());
 				writeCSVItem(csvWriter, contact.getTelefonnummer());
 				writeCSVItem(csvWriter, contact.getEmail());
 				csvWriter.append("\""+contact.getNachrricht()+"\"");
 				csvWriter.append("\n");
 				csvWriter.flush();
 				csvWriter.close();
-			}
+			
 		} catch (Exception e) {
 			throw e;
 		}
