@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@page import="model.*"%>
+<jsp:useBean id="kontakt" class="model.Kontakt" />
+<jsp:setProperty name="kontakt" property="*" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,18 +7,39 @@
 <title>Verein Formular Ok</title>
 </head>
 <body>
-	<h1>Hallo <%=request.getParameter("name")%>!</h1>
-	<p>Vielen Danke fÃ¼r ihren kommentar.Die Daten wurden erfolgreich gespeichert</p>
-	<% Kontakt contact = (Kontakt) request.getAttribute("kontakt"); %>
+	<h1>
+		Hallo<jsp:getProperty property="name" name="kontakt"/>!
+	</h1>
+	<p>
+		Vielen Danke für ihren kommentar.Die Daten wurden erfolgreich gespeichert.
+	</p>
 	<table>
 		<tr>
-			<td>Name:<%= contact.getVorname() %> </td>
-			<td>Wohnort:<%= contact.getWohnort() %> </td>
-			<td>Email:<%= contact.getEmail() %> </td>
-			<td>Nachrricht:<%= contact.getNachrricht() %> </td>
-			<td>Telefon:<%= contact.getTelefonnummer() %> </td>
+			<td>
+				Name:<jsp:getProperty property="name" name="kontakt"/>
+			</td>
 		</tr>
+		<tr>
+			<td>
+				Wohnort:<jsp:getProperty property="wohnort" name="kontakt"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Email:<jsp:getProperty property="email" name="kontakt"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Nachrricht:<jsp:getProperty property="nachrricht" name="kontakt"/>
+			</td>
+	 	</tr>
+		<tr>
+			<td>
+				Telefon:<jsp:getProperty property="telefonnummer" name="kontakt"/>
+			</td>
+		</tr>		
 	</table>
-	<a href=fragen.html>ZurÃ¼ck zur StartSeite</a>
+	<a href="uebersicht.html">Zurück zur StartSeite</a>
 </body>
 </html>
