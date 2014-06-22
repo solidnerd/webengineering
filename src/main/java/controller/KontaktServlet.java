@@ -20,15 +20,14 @@ public class KontaktServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String requestVorname= request.getParameter("name");
-		String requestNachname = request.getParameter("name");
+		String requestName= request.getParameter("name");
 		String requestWohnort = request.getParameter("wohnort");
 		String requestNachrricht = request.getParameter("nachrricht");
 		String requestEmail = request.getParameter("email");
 		String requestTelefonNummer = request.getParameter("telefonnummer");
 		
 		KontaktDAO contactDAO = new CSVKontakt();
-		Kontakt contact = new Kontakt(requestVorname,requestNachname,requestWohnort,requestNachrricht,requestEmail , requestTelefonNummer);
+		Kontakt contact = new Kontakt(requestName,requestWohnort,requestNachrricht,requestEmail , requestTelefonNummer);
 		
 		if(contact.isValid()){
 			request.setAttribute("kontakt", contact);
