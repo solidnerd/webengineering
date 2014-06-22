@@ -2,25 +2,25 @@ package model;
 
 public class Kontakt {
 
-	private String vorname;
-	private String nachname;
+	private String name;
 	private String wohnort;
 	private String telefonnummer;
 	private String email;
 	private String nachrricht;
 
+	public Kontakt(){
+		
+	}
 	
-	public Kontakt(String vorname , String nachname, String wohnort, String nachrricht ,String email){
-		this.vorname 	= vorname;
-		this.nachname 	= nachname;
+	public Kontakt(String name , String wohnort, String nachrricht ,String email){
+		this.name 	= name;
 		this.wohnort 	= wohnort;
 		this.nachrricht = nachrricht;
 		this.email 		= email;
 	}
 	
-	public Kontakt(String vorname , String nachname, String wohnort, String nachrricht ,String email,String telefonnummer){
-		this.vorname 	= vorname;
-		this.nachname 	= nachname;
+	public Kontakt(String name, String wohnort, String nachrricht ,String email,String telefonnummer){
+		this.name=name;
 		this.wohnort 	= wohnort;
 		this.nachrricht = nachrricht;
 		this.email 		= email;
@@ -28,18 +28,13 @@ public class Kontakt {
 	}
 	
 	
-	public String getVorname() {
-		return vorname;
+	public String getName() {
+		return name;
 	}
-	public void setVorname(String vorname) {
-		this.vorname = vorname;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getNachname() {
-		return nachname;
-	}
-	public void setNachname(String nachname) {
-		this.nachname = nachname;
-	}
+
 	public String getWohnort() {
 		return wohnort;
 	}
@@ -66,8 +61,7 @@ public class Kontakt {
 	}
 
 	public boolean isValid(){
-		return (nachname != null && !nachname.isEmpty())  //isEmpty checks only the length
-				&& (vorname != null && !vorname.isEmpty()) 
+		return (name != null && !name.isEmpty())  //isEmpty checks only the length
 				&& (wohnort != null && !wohnort.isEmpty()) 
 				&& (email != null && !email.isEmpty()) 
 				&& (nachrricht != null && !nachrricht.isEmpty());
