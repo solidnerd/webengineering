@@ -27,11 +27,12 @@ public class KontaktServlet extends HttpServlet {
 		String requestTelefonNummer = request.getParameter("telefonnummer");
 		
 		KontaktDAO contactDAO = new CSVKontakt();
-		Kontakt contact = new Kontakt(requestName,requestWohnort,requestNachrricht,requestEmail , requestTelefonNummer);
+		Kontakt kontakt = new Kontakt(requestName, requestWohnort, requestNachrricht, requestEmail, requestTelefonNummer);
 		
-		if(contact.isValid()){
-			request.setAttribute("kontakt", contact);
+		if(kontakt.isValid()){
+			request.setAttribute("kontakt", kontakt);
 			try {
+				contactDAO.Save(kontakt);
 				RequestDispatcher view  = request.getRequestDispatcher("formular_ok.jsp");
 				view.forward(request, response);
 			} catch (Exception e) {
