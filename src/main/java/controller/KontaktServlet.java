@@ -20,6 +20,7 @@ public class KontaktServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String requestName= request.getParameter("name");
 		String requestWohnort = request.getParameter("wohnort");
 		String requestNachrricht = request.getParameter("nachrricht");
@@ -32,12 +33,14 @@ public class KontaktServlet extends HttpServlet {
 		if(kontakt.isValid()){
 			request.setAttribute("kontakt", kontakt);
 			try {
-				contactDAO.Save(kontakt);
-				RequestDispatcher view  = request.getRequestDispatcher("formular_ok.jsp");
-				view.forward(request, response);
+				
+				contactDAO.Save(kontakt); // Saving Contact via FileWriter in a CSV File
+				
+				RequestDispatcher requestDispatcher  = request.getRequestDispatcher("formular_ok.jsp");
+				requestDispatcher.forward(request, response); 
 			} catch (Exception e) {
-				RequestDispatcher view  = request.getRequestDispatcher("formular_error.jsp");
-				view.forward(request, response);
+				RequestDispatcher requestDispatcher  = request.getRequestDispatcher("formular_error.jsp");
+				requestDispatcher.forward(request, response);
 			}			
 		}else{
 			RequestDispatcher view  = request.getRequestDispatcher("formular_error.jsp");
