@@ -10,11 +10,12 @@ public class CSVKontakt implements KontaktDAO {
 	
 	public void Save(Kontakt contact) throws Exception {
 		try{
-				FileWriter csvWriter = new FileWriter("kontakt.csv",true);
+				FileWriter csvWriter = new FileWriter("kontakt.csv",true); 
 				writeCSVItem(csvWriter, contact.getName());
 				writeCSVItem(csvWriter, contact.getTelefonnummer());
 				writeCSVItem(csvWriter, contact.getEmail());
-				csvWriter.append("\""+contact.getNachrricht()+"\"");
+				// Escaping "" For MultiLine Support in the CSV
+				csvWriter.append("\""+contact.getNachrricht()+"\""); 
 				csvWriter.append("\n");
 				csvWriter.flush();
 				csvWriter.close();
